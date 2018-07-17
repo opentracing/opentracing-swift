@@ -17,7 +17,7 @@ public protocol Tracer {
     ///                            current walltime
     /// - returns:                 a valid Span instance; it is the caller's responsibility to call finish()
     func startSpan(operationName: String, references: [Reference]?, tags: [String: Any]?,
-                   startTime: Date?) throws -> Span
+                   startTime: Date?) -> Span
 
     /// Transfer the span information into the carrier of the given format.
     ///
@@ -33,9 +33,7 @@ public protocol Tracer {
     /// - parameter writer:      the desired inject carrier format and corresponding carrier. Format is
     ///                          specified via the type, and the carrier is the backing store being written
     ///                          to.
-    /// - throws:                error during injection. OpenTracing errors will be in the OTErrorDomain and
-    ///                          may involve OTUnsupportedFormatCode or OTInvalidCarrierCode.
-    func inject(spanContext: SpanContext, writer: FormatWriter) throws
+    func inject(spanContext: SpanContext, writer: FormatWriter)
 
     /// Extract a SpanContext previously (and remotely) injected into the carrier of the given format.
     /// 
@@ -50,22 +48,19 @@ public protocol Tracer {
     /// 
     /// - parameter reader:  the desired extract carrier format and corresponding carrier. Format is
     ///                      specified via the type, and the carrier is the backing store being read from.
-    /// - throws:            error during the injection. OpenTracing errors will be in the OTErrorDomain and
-    ///                      may involve OTUnsupportedFormatCode, OTInvalidCarrierCode, or
-    ///                      OTSpanContextCorruptedCode.
     /// @returns a newly-created OTSpanContext that belongs to the trace previously
     ///        injected into the carrier (presumably in a remote process)
     /// 
-    func extract(reader: FormatReader) throws -> SpanContext
+    func extract(reader: FormatReader) -> SpanContext
 }
 
 /// - TODO: headerdoc
 public extension Tracer {
     func startSpan(operationName: String, childOf parent: SpanContext?, tags: [String: Any]? = nil,
-                   startTime: Date? = nil) throws -> Span
+                   startTime: Date? = nil) -> Span
     {
         let references = parent.map { [Reference.child(of: $0)] }
-        return try self.startSpan(operationName: operationName, references: references, tags: tags,
+        return self.startSpan(operationName: operationName, references: references, tags: tags,
                                   startTime: startTime)
     }
 }

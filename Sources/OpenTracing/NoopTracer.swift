@@ -7,14 +7,14 @@ private struct NoopGlobals {
 }
 
 public struct NoopTracer: Tracer {
-    public func extract(reader: FormatReader) throws -> SpanContext {
+    public func extract(reader: FormatReader) -> SpanContext {
         return NoopGlobals.context
     }
 
-    public func inject(spanContext: SpanContext, writer: FormatWriter) throws {}
+    public func inject(spanContext: SpanContext, writer: FormatWriter) {}
 
     public func startSpan(operationName: String, references: [Reference]?, tags: [String : Any]?,
-                          startTime: Date?) throws -> Span
+                          startTime: Date?) -> Span
     {
         return NoopGlobals.span
     }
