@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
     spec.version       = '0.0.1'
     spec.license       = { :type => 'BSD' }
     spec.homepage      = 'https://github.com/lightstep/opentracing-swift'
-    spec.authors       = { 'Lightstep' => 'hello@lightstep.com' }
+    spec.authors       = { 'LightStep' => 'support@lightstep.com' }
     spec.summary       = 'Swift implementation of the OpenTracing standard'
 
     spec.source = {
