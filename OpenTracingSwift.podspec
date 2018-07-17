@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
     spec.summary       = 'Swift implementation of the OpenTracing standard'
 
     spec.source = {
-        :git => 'git@github.com:lightstep/opentracing-swift.git',
+        :git => 'https://github.com/lightstep/opentracing-swift.git',
         :tag => spec.version
     }
 
