@@ -51,7 +51,7 @@ public protocol Tracer {
     /// @returns a newly-created OTSpanContext that belongs to the trace previously
     ///        injected into the carrier (presumably in a remote process)
     /// 
-    func extract(reader: FormatReader) -> SpanContext
+    func extract(reader: FormatReader) -> SpanContext?
 }
 
 /// - TODO: headerdoc

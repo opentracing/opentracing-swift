@@ -29,3 +29,5 @@ $(PROJECT):
 	swift package generate-xcodeproj \
 		--xcconfig-overrides tools/settings.xcconfig \
 		--output $(PROJECT)
+
+project: $(PROJECT)

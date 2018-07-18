@@ -7,7 +7,7 @@ private struct NoopGlobals {
 }
 
 public struct NoopTracer: Tracer {
-    public func extract(reader: FormatReader) -> SpanContext {
+    public func extract(reader: FormatReader) -> SpanContext? {
         return NoopGlobals.context
     }
 
