@@ -1,5 +1,5 @@
-struct OpenTracing {
+public struct OpenTracing {
     private init() {}
 
-    static var shared: Tracer = NoopTracer()
+    public static var shared: Tracer = NoopTracer()
 }
