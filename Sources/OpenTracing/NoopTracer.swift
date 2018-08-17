@@ -6,7 +6,10 @@ private struct NoopGlobals {
     static let context = NoopSpanContext()
 }
 
+/// All classes here are no-op and thus are not documented with headerdocs
+
 public struct NoopTracer: Tracer {
+
     public func extract(reader: FormatReader) -> SpanContext? {
         return NoopGlobals.context
     }
