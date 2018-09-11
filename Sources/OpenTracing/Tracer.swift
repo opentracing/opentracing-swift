@@ -3,11 +3,10 @@ import Foundation
 /// Tracer is the starting point for all OpenTracing instrumentation. Use it
 /// to create OTSpans, inject/extract them between processes, and so on.
 /// 
-/// Tracer is thread-safe.
+/// Tracer should be thread-safe.
 public protocol Tracer {
 
-    /// Start a new span with the given operation name. Since there is no parent
-    /// specified, the returned span will be a trace root.
+    /// Start a new span with the given operation name.
     ///
     /// - parameter operationName: the operation name for the newly-started span
     /// - parameter references:    an optional list of Reference instances to record causal relationships
@@ -54,8 +53,18 @@ public protocol Tracer {
     func extract(reader: FormatReader) -> SpanContext?
 }
 
-/// - TODO: headerdoc
+/// Extension for a convenience startSpan() with a single parent rather than a list of references
 public extension Tracer {
+
+    /// Start a new span with the given operation name.
+    ///
+    /// - parameter operationName: the operation name for the newly-started span
+    /// - parameter parent:        span context that will be a parent reference; nil creates a root span
+    /// - parameter tags:          a set of tag keys and values per OTSpan#setTag:value:, or nil to start with
+    ///                            an empty tag map
+    /// - parameter startTime:     an explicitly specified start timestamp for the OTSpan, or nil to use the
+    ///                            current walltime
+    /// - returns:                 a valid Span instance; it is the caller's responsibility to call finish()
     func startSpan(operationName: String, childOf parent: SpanContext?, tags: [String: Any]? = nil,
                    startTime: Date? = nil) -> Span
     {
