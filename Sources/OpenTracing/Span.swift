@@ -37,7 +37,9 @@ public protocol Span {
     /// - parameter key: Key of the baggage item to get
     func baggageItem(withKey key: String) -> String?
 
-    /// Finish the span at the specified time, or at some default time if null
+    /// Finish the span at the specified time, or at some default time if nil
+    ///
+    /// - parameter time: If non-nil, time at which to finish the span; default time is used if nil
     func finish(at time: Date?)
 }
 

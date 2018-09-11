@@ -1,9 +1,24 @@
 import Foundation
 
-/// Format and carrier for extract(). Marker protocol.
+/// "Format", "Carrier", "Extract", "Inject", and "Text Map" are opentracing-specific concepts. See:
+/// https://github.com/opentracing/specification/blob/master/specification.md#inject-a-spancontext-into-a-carrier
+/// https://github.com/opentracing/specification/blob/master/specification.md#extract-a-spancontext-from-a-carrier
+/// https://github.com/opentracing/specification/blob/master/specification.md#note-required-formats-for-injection-and-extraction
+
+/// Format and carrier for extract().
+/// A FormatReader is used to extract a SpanContext from a carrier.
+/// The type of the child protocol is the format descriptor.
+/// The carrier is specified by the protocol's return type for the getter, usually `getAll()`.
+///
+/// Marker protocol.
 public protocol FormatReader {}
 
-/// Format and carrier for inject(). Marker protocol.
+/// Format and carrier for inject().
+/// A FormatWriter is used to inject a SpanContext into a carrier.
+/// The type of the child protocol is the format descriptor.
+/// The carrier is specified by the protocol's parameter type for the setter, usually `setAll()`
+///
+/// Marker protocol.
 public protocol FormatWriter {}
 
 /// Read interface for a textmap

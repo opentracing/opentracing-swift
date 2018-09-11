@@ -6,8 +6,8 @@ private struct NoopGlobals {
     static let context = NoopSpanContext()
 }
 
-/// All classes here are no-op and thus are not documented with headerdocs
-
+/// A tracer implementation that does nothing.
+/// This is useful for guaranteeing that a tracer reference is non-nil.
 public struct NoopTracer: Tracer {
 
     public func extract(reader: FormatReader) -> SpanContext? {

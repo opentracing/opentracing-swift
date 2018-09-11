@@ -4,7 +4,7 @@ public struct Reference {
     /// Type of reference
     public let type: ReferenceType
 
-    /// Span context that the ference points to
+    /// Span context that the reference points to
     public let context: SpanContext
 
     static func child(of parent: SpanContext) -> Reference {
