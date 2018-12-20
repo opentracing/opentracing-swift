@@ -18,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19409A5421CBED29005FA2E7 /* opentracing_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = opentracing_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		19409A5421CBED29005FA2E7 /* OpenTracing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTracing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19409A5721CBED29005FA2E7 /* opentracing_swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = opentracing_swift.h; sourceTree = "<group>"; };
 		19409A5821CBED29005FA2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19409A6521CBEE2B005FA2E7 /* Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
@@ -52,7 +52,7 @@
 		19409A5521CBED29005FA2E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19409A5421CBED29005FA2E7 /* opentracing_swift.framework */,
+				19409A5421CBED29005FA2E7 /* OpenTracing.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -111,9 +111,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		19409A5321CBED29005FA2E7 /* opentracing-swift */ = {
+		19409A5321CBED29005FA2E7 /* OpenTracing */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19409A5C21CBED29005FA2E7 /* Build configuration list for PBXNativeTarget "opentracing-swift" */;
+			buildConfigurationList = 19409A5C21CBED29005FA2E7 /* Build configuration list for PBXNativeTarget "OpenTracing" */;
 			buildPhases = (
 				19409A4F21CBED29005FA2E7 /* Headers */,
 				19409A5021CBED29005FA2E7 /* Sources */,
@@ -124,9 +124,9 @@
 			);
 			dependencies = (
 			);
-			name = "opentracing-swift";
+			name = OpenTracing;
 			productName = "opentracing-swift";
-			productReference = 19409A5421CBED29005FA2E7 /* opentracing_swift.framework */;
+			productReference = 19409A5421CBED29005FA2E7 /* OpenTracing.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -155,7 +155,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				19409A5321CBED29005FA2E7 /* opentracing-swift */,
+				19409A5321CBED29005FA2E7 /* OpenTracing */,
 			);
 		};
 /* End PBXProject section */
@@ -370,7 +370,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19409A5C21CBED29005FA2E7 /* Build configuration list for PBXNativeTarget "opentracing-swift" */ = {
+		19409A5C21CBED29005FA2E7 /* Build configuration list for PBXNativeTarget "OpenTracing" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				19409A5D21CBED29005FA2E7 /* Debug */,
