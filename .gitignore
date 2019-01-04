@@ -68,4 +68,4 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 .DS_Store
-OpenTracing.xcodeproj/
+#OpenTracing.xcodeproj/
