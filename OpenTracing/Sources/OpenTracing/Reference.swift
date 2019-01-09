@@ -7,11 +7,11 @@ public struct Reference {
     /// Span context that the reference points to
     public let context: SpanContext
 
-    static func child(of parent: SpanContext) -> Reference {
+    public static func child(of parent: SpanContext) -> Reference {
         return Reference(type: .childOf, context: parent)
     }
 
-    static func follows(from precedingContext: SpanContext) -> Reference {
+    public static func follows(from precedingContext: SpanContext) -> Reference {
         return Reference(type: .followsFrom, context: precedingContext)
     }
 }
