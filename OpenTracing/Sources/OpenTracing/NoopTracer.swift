@@ -9,7 +9,8 @@ private struct NoopGlobals {
 /// A tracer implementation that does nothing.
 /// This is useful for guaranteeing that a tracer reference is non-nil.
 public struct NoopTracer: Tracer {
-
+    public init() {}
+    
     public func extract(reader: FormatReader) -> SpanContext? {
         return NoopGlobals.context
     }
@@ -24,6 +25,8 @@ public struct NoopTracer: Tracer {
 }
 
 public struct NoopSpan: Span {
+    public init() {}
+    
     public func tracer() -> Tracer {
         return NoopGlobals.tracer
     }
