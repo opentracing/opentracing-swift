@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "19838D352213854C00782CC0"
-               BuildableName = "OpenTracing_watchOS.framework"
+               BuildableName = "OpenTracing.framework"
                BlueprintName = "OpenTracing watchOS"
                ReferencedContainer = "container:OpenTracing.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19838D352213854C00782CC0"
-            BuildableName = "OpenTracing_watchOS.framework"
+            BuildableName = "OpenTracing.framework"
             BlueprintName = "OpenTracing watchOS"
             ReferencedContainer = "container:OpenTracing.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19838D352213854C00782CC0"
-            BuildableName = "OpenTracing_watchOS.framework"
+            BuildableName = "OpenTracing.framework"
             BlueprintName = "OpenTracing watchOS"
             ReferencedContainer = "container:OpenTracing.xcodeproj">
          </BuildableReference>
