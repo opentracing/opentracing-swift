@@ -4,7 +4,7 @@ import Foundation
 public protocol Span {
 
     /// The span context that refers to this span
-    func context() -> SpanContext
+    var context: SpanContext { get }
 
     /// The tracer that produced this span
     func tracer() -> Tracer
@@ -18,13 +18,13 @@ public protocol Span {
     ///
     /// - parameter key:   Key of the tag to set
     /// - parameter value: Value of the tag to set
-    func setTag(key: String, value: Any)
+    func setTag(key: String, value: Codable)
 
     /// Add a new log with the supplied fields and timestamp
     ///
     /// - parameter fields:    Fields to set on the span log
     /// - parameter timestamp: Timestamp to use for the span log
-    func log(fields: [String: Any], timestamp: Date?)
+    func log(fields: [String: Codable], timestamp: Date)
 
     /// Add a new baggage item or replace an existing baggage item value for the given key
     ///
@@ -40,7 +40,7 @@ public protocol Span {
     /// Finish the span at the specified time, or at some default time if nil
     ///
     /// - parameter time: If non-nil, time at which to finish the span; default time is used if nil
-    func finish(at time: Date?)
+    func finish(at time: Date)
 }
 
 /// Convenience extension
@@ -49,12 +49,12 @@ public extension Span {
     /// Add a new log with the supplied fields and the current timestamp
     ///
     /// - parameter fields: Fields to set on the span log
-    func log(fields: [String: Any]) {
-        self.log(fields: fields, timestamp: nil)
+    func log(fields: [String: Codable]) {
+        self.log(fields: fields, timestamp: Date())
     }
 
     /// Finish the span at the current time
     func finish() {
-        self.finish(at: nil)
+        self.finish(at: Date())
     }
 }

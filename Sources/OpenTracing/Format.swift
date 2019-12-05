@@ -11,7 +11,7 @@ import Foundation
 /// The carrier is specified by the protocol's return type for the getter, usually `getAll()`.
 ///
 /// Marker protocol.
-public protocol FormatReader {}
+public protocol FormatReader: CustomFormatReader {}
 
 /// Format and carrier for inject().
 /// A FormatWriter is used to inject a SpanContext into a carrier.
@@ -19,25 +19,13 @@ public protocol FormatReader {}
 /// The carrier is specified by the protocol's parameter type for the setter, usually `setAll()`
 ///
 /// Marker protocol.
-public protocol FormatWriter {}
+public protocol FormatWriter: CustomFormatWriter {}
 
 /// Read interface for a textmap
-public protocol TextMapReader: FormatReader {
-
-    /// Return the text map as a [String: String]
-    ///
-    /// - returns: textmap as a [String: String] representation
-    func getAll() -> [String: String]
-}
+public protocol TextMapReader: FormatReader {}
 
 /// Write interface for a textmap
-public protocol TextMapWriter: FormatWriter {
-
-    /// Set all values from a [String: String]
-    ///
-    /// - parameter textMap: dictionary containing key-value pairs to set into the text map
-    func setAll(textMap: [String: String])
-}
+public protocol TextMapWriter: FormatWriter {}
 
 /// Read interface for HTTP headers
 public protocol HTTPHeadersReader: TextMapReader {}

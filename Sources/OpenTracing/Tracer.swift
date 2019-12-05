@@ -15,7 +15,7 @@ public protocol Tracer {
     /// - parameter startTime:     an explicitly specified start timestamp for the OTSpan, or nil to use the
     ///                            current walltime
     /// - returns:                 a valid Span instance; it is the caller's responsibility to call finish()
-    func startSpan(operationName: String, references: [Reference]?, tags: [String: Any]?,
+    func startSpan(operationName: String, references: [Reference]?, tags: [String: Codable]?,
                    startTime: Date?) -> Span
 
     /// Transfer the span information into the carrier of the given format.
@@ -65,7 +65,7 @@ public extension Tracer {
     /// - parameter startTime:     an explicitly specified start timestamp for the OTSpan, or nil to use the
     ///                            current walltime
     /// - returns:                 a valid Span instance; it is the caller's responsibility to call finish()
-    func startSpan(operationName: String, childOf parent: SpanContext?, tags: [String: Any]? = nil,
+    func startSpan(operationName: String, childOf parent: SpanContext?, tags: [String: Codable]? = nil,
                    startTime: Date? = nil) -> Span
     {
         let references = parent.map { [Reference.child(of: $0)] }
