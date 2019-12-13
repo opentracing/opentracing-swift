@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "OpenTracingSwift",
+    name: "OpenTracing",
     products: [
         .library(
             name: "OpenTracing",
@@ -12,6 +12,7 @@ let package = Package(
     targets: [
         .target(
             name: "OpenTracing",
-            dependencies: [])
+            dependencies: [],
+            path: "Sources")
     ]
 )

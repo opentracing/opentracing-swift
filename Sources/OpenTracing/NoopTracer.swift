@@ -16,7 +16,7 @@ public struct NoopTracer: Tracer {
 
     public func inject(spanContext: SpanContext, writer: FormatWriter) {}
 
-    public func startSpan(operationName: String, references: [Reference]?, tags: [String : Any]?,
+    public func startSpan(operationName: String, references: [Reference]?, tags: [String : Codable]?,
                           startTime: Date?) -> Span
     {
         return NoopGlobals.span
@@ -24,19 +24,20 @@ public struct NoopTracer: Tracer {
 }
 
 public struct NoopSpan: Span {
+    
+    public var context: SpanContext {
+        return NoopGlobals.context
+    }
+
     public func tracer() -> Tracer {
         return NoopGlobals.tracer
     }
 
-    public func context() -> SpanContext {
-        return NoopGlobals.context
-    }
-
     public func setOperationName(_ operationName: String) {}
 
-    public func finish(at time: Date?) {}
+    public func finish(at time: Date) {}
 
-    public func log(fields: [String: Any], timestamp: Date?) {}
+    public func log(fields: [String: Codable], timestamp: Date) {}
 
     public func baggageItem(withKey key: String) -> String? {
         return nil
@@ -44,7 +45,7 @@ public struct NoopSpan: Span {
 
     public func setBaggageItem(key: String, value: String) {}
 
-    public func setTag(key: String, value: Any) {}
+    public func setTag(key: String, value: Codable) {}
 }
 
 public struct NoopSpanContext: SpanContext {
