@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		61BA34DF2424F0D000587A96 /* OpenTracing.h in Headers */ = {isa = PBXBuildFile; fileRef = 61BA34DD2424F0D000587A96 /* OpenTracing.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61BA34ED2424F16C00587A96 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34E62424F16C00587A96 /* Format.swift */; };
+		61BA34EE2424F16C00587A96 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34E72424F16C00587A96 /* Global.swift */; };
+		61BA34EF2424F16C00587A96 /* Reference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34E82424F16C00587A96 /* Reference.swift */; };
+		61BA34F02424F16C00587A96 /* NoopTracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34E92424F16C00587A96 /* NoopTracer.swift */; };
+		61BA34F12424F16C00587A96 /* Span.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34EA2424F16C00587A96 /* Span.swift */; };
+		61BA34F22424F16C00587A96 /* SpanContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34EB2424F16C00587A96 /* SpanContext.swift */; };
+		61BA34F32424F16C00587A96 /* Tracer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BA34EC2424F16C00587A96 /* Tracer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		61BA34DA2424F0D000587A96 /* OpenTracing.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenTracing.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61BA34DD2424F0D000587A96 /* OpenTracing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenTracing.h; sourceTree = "<group>"; };
 		61BA34DE2424F0D000587A96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		61BA34E62424F16C00587A96 /* Format.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		61BA34E72424F16C00587A96 /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		61BA34E82424F16C00587A96 /* Reference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reference.swift; sourceTree = "<group>"; };
+		61BA34E92424F16C00587A96 /* NoopTracer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoopTracer.swift; sourceTree = "<group>"; };
+		61BA34EA2424F16C00587A96 /* Span.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Span.swift; sourceTree = "<group>"; };
+		61BA34EB2424F16C00587A96 /* SpanContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpanContext.swift; sourceTree = "<group>"; };
+		61BA34EC2424F16C00587A96 /* Tracer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tracer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +60,26 @@
 		61BA34DC2424F0D000587A96 /* OpenTracing */ = {
 			isa = PBXGroup;
 			children = (
+				61BA34E52424F16C00587A96 /* OpenTracing */,
 				61BA34DD2424F0D000587A96 /* OpenTracing.h */,
 				61BA34DE2424F0D000587A96 /* Info.plist */,
 			);
 			path = OpenTracing;
+			sourceTree = "<group>";
+		};
+		61BA34E52424F16C00587A96 /* OpenTracing */ = {
+			isa = PBXGroup;
+			children = (
+				61BA34E62424F16C00587A96 /* Format.swift */,
+				61BA34E72424F16C00587A96 /* Global.swift */,
+				61BA34E82424F16C00587A96 /* Reference.swift */,
+				61BA34E92424F16C00587A96 /* NoopTracer.swift */,
+				61BA34EA2424F16C00587A96 /* Span.swift */,
+				61BA34EB2424F16C00587A96 /* SpanContext.swift */,
+				61BA34EC2424F16C00587A96 /* Tracer.swift */,
+			);
+			name = OpenTracing;
+			path = ../../Sources/OpenTracing;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +161,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61BA34F02424F16C00587A96 /* NoopTracer.swift in Sources */,
+				61BA34EF2424F16C00587A96 /* Reference.swift in Sources */,
+				61BA34F32424F16C00587A96 /* Tracer.swift in Sources */,
+				61BA34EE2424F16C00587A96 /* Global.swift in Sources */,
+				61BA34F12424F16C00587A96 /* Span.swift in Sources */,
+				61BA34ED2424F16C00587A96 /* Format.swift in Sources */,
+				61BA34F22424F16C00587A96 /* SpanContext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
