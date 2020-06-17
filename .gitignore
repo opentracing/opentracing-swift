@@ -39,7 +39,6 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
-*.xcodeproj/
 
 # CocoaPods
 #
@@ -69,4 +68,6 @@ fastlane/screenshots/**/*.png
 fastlane/test_output
 
 .DS_Store
-OpenTracing.xcodeproj/
+
+# Exclude SPM-generated project
+./OpenTracing.xcodeproj/
